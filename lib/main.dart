@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototipo_arrendatario/screens/screens.dart';
+import 'package:prototipo_arrendatario/theme/app_theme.dart';
 
 import 'screens/home_screen.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       'home' : (_) => HomeScreen(),
       'habitacion' : (_) => HabitacionScreen(),
      },
+     theme: AppThem.lightTheme,
     );
   }
 }
