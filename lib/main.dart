@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
      routes: {
       'home' : (_) => HomeScreen(),
       'habitacion' : (_) => HabitacionScreen(),
+      'filtros' :(_) => FiltrosScreen(),
+      'apartamento' :(_) => ApartamentoScreen(),
      },
      theme: AppThem.lightTheme,
     );

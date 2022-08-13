@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototipo_arrendatario/screens/apartamento_screen.dart';
 
 import 'habitacion_screen.dart';
 
@@ -11,13 +12,13 @@ class _HomeScreenState extends State<HomeScreen> {
   var selectedType;
   //Listado de ciudades
   List<String> _ciudades = <String>[
-    'Tunja',
-    'Duitama',
-    'Sogamoso',
-    'Chiquinquira',
     'Aguazul',
+    'Bogotá',
     'Casanare',
-    'Bogota',
+    'Chiquinquirá',
+    'Duitama',
+    'Tunja',
+    'Sogamoso',
   ];
   RangeValues sliderValue = RangeValues(100, 800);
   double _curentSliderValue = 10;
@@ -395,7 +396,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 elevation: 2),
             onPressed: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => HabitacionScreen()));
+                  MaterialPageRoute(builder: (context) => 
+                _hasApartamentoPressed == true
+                  ? ApartamentoScreen()
+                  : HabitacionScreen()
+                ));
             },
             icon: Icon(
               Icons.search_sharp,
