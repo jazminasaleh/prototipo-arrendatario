@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FiltrosScreen extends StatelessWidget {
+class FiltrosHabitacionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class FiltrosScreen extends StatelessWidget {
                decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(20)),
                 child: SizedBox(
-                  height: 400,
+                  height: 430,
                   width: 390,
                   child: Column(
                     children: [
@@ -69,35 +69,49 @@ class FiltrosScreen extends StatelessWidget {
         SizedBox(height: 15,),
         Row(
           children: [
-             Text('     Caracteristicas', style: TextStyle(color: Colors.grey),),
+             Text('     Incluye', style: TextStyle(color: Colors.grey[600]),),
           ],
         ),
         SizedBox(height: 8,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           Icon(Icons.bed_sharp),
-           SizedBox(width: 2,),
-           Text('4'),
-           SizedBox(width: 27,),
-           Icon(Icons.bathtub_sharp),
-           SizedBox(width: 2,),
-           Text('3'),
+            Column(children: [
+               Icon(Icons.bed_sharp),
+               Text('Cama', style: TextStyle(color: Colors.grey[500]),),
+            ],),
+           SizedBox(width: 34, ),
+           Column(
+            children: [
+                Icon(Icons.bathtub_sharp),
+                Text('Baño', style: TextStyle(color: Colors.grey[500])),
+            ],
+           ),
+            SizedBox(width: 34,),
+          Column(
+            children: [
+              Icon(Icons.garage),
+              Text('Parqueo', style: TextStyle(color: Colors.grey[500])),
+            ],
+          ),
+            SizedBox(width: 34,),
+            Column(
+              children: [
+                 Icon(Icons.local_laundry_service),
+               Text('Lavadero', style: TextStyle(color: Colors.grey[500])),
+              ],
+            ), 
             SizedBox(width: 27,),
-           Icon(Icons.garage),
+            Column(
+              children: [
+                Icon(Icons.wifi),
+                 Text('wifi', style: TextStyle(color: Colors.grey[500])),
+              ],
+            ),
            SizedBox(width: 2,),
-           Text('1'),
-            SizedBox(width: 27,),
-           Icon(Icons.stacked_bar_chart_outlined),
-           SizedBox(width: 2,),
-           Text('5'),
-            SizedBox(width: 27,),
-           Icon(Icons.wifi),
-           SizedBox(width: 2,),
-           Text('10'),
-
           ],
         ),
+        SizedBox(height: 2,),
         ],
               )),
             )

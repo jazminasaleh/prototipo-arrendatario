@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prototipo_arrendatario/screens/filtros_screen.dart';
 
+import 'flitros_habitacion_screen.dart';
+
 class HabitacionScreen extends StatefulWidget {
   @override
   State<HabitacionScreen> createState() => _HabitacionScreenState();
@@ -361,7 +363,7 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
                 elevation: 2),
             onPressed: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => FiltrosScreen()));
+                  MaterialPageRoute(builder: (context) => FiltrosHabitacionScreen()));
             },
             icon: Icon(
               Icons.house_siding,
