@@ -103,6 +103,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                           onPressed: () => {
                             setState(() {
                               _hasUnoPressed = !_hasUnoPressed;
+                              _hasDosPressed = false;
+                              _hasTresPressed = false;
+                              _hasCuatroPressed = false;
+                              _hasCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -120,6 +124,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                            onPressed: () => {
                             setState(() {
                               _hasDosPressed = !_hasDosPressed;
+                               _hasUnoPressed = false;
+                              _hasTresPressed = false;
+                              _hasCuatroPressed = false;
+                              _hasCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -137,6 +145,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                             onPressed: () => {
                             setState(() {
                               _hasTresPressed = !_hasTresPressed;
+                               _hasUnoPressed = false;
+                              _hasDosPressed = false;
+                              _hasCuatroPressed = false;
+                              _hasCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -154,6 +166,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                            onPressed: () => {
                             setState(() {
                               _hasCuatroPressed = !_hasCuatroPressed;
+                               _hasUnoPressed = false;
+                              _hasDosPressed = false;
+                              _hasTresPressed = false;
+                              _hasCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -171,6 +187,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                           onPressed: () => {
                             setState(() {
                               _hasCincoPressed = !_hasCincoPressed;
+                                _hasUnoPressed = false;
+                              _hasDosPressed = false;
+                              _hasCuatroPressed = false;
+                              _hasTresPressed = false;
                             })
                           },
                           child: const Text(
@@ -223,6 +243,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                           onPressed: () => {
                             setState(() {
                               _hasBUnoPressed = !_hasBUnoPressed;
+                              _hasBDosPressed = false;
+                              _hasBTresPressed = false;
+                              _hasBCuatroPressed = false;
+                              _hasBCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -240,6 +264,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                            onPressed: () => {
                             setState(() {
                               _hasBDosPressed = !_hasBDosPressed;
+                              _hasBUnoPressed = false;
+                              _hasBTresPressed = false;
+                              _hasBCuatroPressed = false;
+                              _hasBCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -257,6 +285,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                             onPressed: () => {
                             setState(() {
                               _hasBTresPressed = !_hasBTresPressed;
+                              _hasBUnoPressed = false;
+                              _hasBDosPressed = false;
+                              _hasBCuatroPressed = false;
+                              _hasBCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -274,6 +306,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                            onPressed: () => {
                             setState(() {
                               _hasBCuatroPressed = !_hasBCuatroPressed;
+                              _hasBUnoPressed = false;
+                              _hasBDosPressed = false;
+                              _hasBTresPressed = false;
+                              _hasBCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -291,6 +327,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                           onPressed: () => {
                             setState(() {
                               _hasBCincoPressed = !_hasBCincoPressed;
+                              _hasBUnoPressed = false;
+                              _hasBDosPressed = false;
+                              _hasBCuatroPressed = false;
+                              _hasBTresPressed = false;
                             })
                           },
                           child: const Text(
@@ -343,6 +383,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                           onPressed: () => {
                             setState(() {
                               _hasEUnoPressed = !_hasEUnoPressed;
+                              _hasEDosPressed = false;
+                              _hasETresPressed = false;
+                              _hasECuatroPressed = false;
+                              _hasECincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -360,6 +404,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                            onPressed: () => {
                             setState(() {
                               _hasEDosPressed = !_hasEDosPressed;
+                              _hasEUnoPressed = false;
+                              _hasETresPressed = false;
+                              _hasECuatroPressed = false;
+                              _hasECincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -377,6 +425,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                             onPressed: () => {
                             setState(() {
                               _hasETresPressed = !_hasETresPressed;
+                              _hasEUnoPressed = false;
+                              _hasEDosPressed = false;
+                              _hasECuatroPressed = false;
+                              _hasECincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -394,6 +446,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                            onPressed: () => {
                             setState(() {
                               _hasECuatroPressed = !_hasECuatroPressed;
+                              _hasEUnoPressed = false;
+                              _hasEDosPressed = false;
+                              _hasETresPressed = false;
+                              _hasECincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -411,6 +467,10 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
                           onPressed: () => {
                             setState(() {
                               _hasECincoPressed = !_hasECincoPressed;
+                              _hasEUnoPressed = false;
+                              _hasEDosPressed = false;
+                              _hasECuatroPressed = false;
+                              _hasETresPressed = false;
                             })
                           },
                           child: const Text(

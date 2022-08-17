@@ -59,7 +59,7 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
         ],
       ),
       body: Padding(
-         padding: EdgeInsets.only(left: 10),
+        padding: EdgeInsets.only(left: 10),
         child: Column(children: [
           SizedBox(
             height: 20,
@@ -95,6 +95,10 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
                           onPressed: () => {
                             setState(() {
                               _hasUnoPressed = !_hasUnoPressed;
+                              _hasDosPressed = false;
+                              _hasTresPressed = false;
+                              _hasCuatroPressed = false;
+                              _hasCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -103,15 +107,19 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
                           ),
                           style: ElevatedButton.styleFrom(
                               elevation: 5,
-                                primary: _hasUnoPressed
-                              ? Color.fromARGB(255, 241, 207, 56)
-                              : Color.fromARGB(255, 251, 251, 240),
+                              primary: _hasUnoPressed
+                                  ? Color.fromARGB(255, 241, 207, 56)
+                                  : Color.fromARGB(255, 251, 251, 240),
                               padding: EdgeInsets.all(8)),
                         ),
                         ElevatedButton(
-                           onPressed: () => {
+                          onPressed: () => {
                             setState(() {
                               _hasDosPressed = !_hasDosPressed;
+                              _hasUnoPressed = false;
+                              _hasTresPressed = false;
+                              _hasCuatroPressed = false;
+                              _hasCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -120,15 +128,19 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
                           ),
                           style: ElevatedButton.styleFrom(
                               elevation: 5,
-                               primary: _hasDosPressed
-                              ? Color.fromARGB(255, 241, 207, 56)
-                              : Color.fromARGB(255, 251, 251, 240),
+                              primary: _hasDosPressed
+                                  ? Color.fromARGB(255, 241, 207, 56)
+                                  : Color.fromARGB(255, 251, 251, 240),
                               padding: EdgeInsets.all(8)),
                         ),
                         ElevatedButton(
-                            onPressed: () => {
+                          onPressed: () => {
                             setState(() {
                               _hasTresPressed = !_hasTresPressed;
+                              _hasUnoPressed = false;
+                              _hasDosPressed = false;
+                              _hasCuatroPressed = false;
+                              _hasCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -138,14 +150,18 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
                           style: ElevatedButton.styleFrom(
                               elevation: 5,
                               primary: _hasTresPressed
-                              ? Color.fromARGB(255, 241, 207, 56)
-                              : Color.fromARGB(255, 251, 251, 240),
+                                  ? Color.fromARGB(255, 241, 207, 56)
+                                  : Color.fromARGB(255, 251, 251, 240),
                               padding: EdgeInsets.all(8)),
                         ),
                         ElevatedButton(
-                           onPressed: () => {
+                          onPressed: () => {
                             setState(() {
                               _hasCuatroPressed = !_hasCuatroPressed;
+                              _hasUnoPressed = false;
+                              _hasDosPressed = false;
+                              _hasTresPressed = false;
+                              _hasCincoPressed = false;
                             })
                           },
                           child: const Text(
@@ -154,15 +170,19 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
                           ),
                           style: ElevatedButton.styleFrom(
                               elevation: 5,
-                               primary: _hasCuatroPressed
-                              ? Color.fromARGB(255, 241, 207, 56)
-                              : Color.fromARGB(255, 251, 251, 240),
+                              primary: _hasCuatroPressed
+                                  ? Color.fromARGB(255, 241, 207, 56)
+                                  : Color.fromARGB(255, 251, 251, 240),
                               padding: EdgeInsets.all(8)),
                         ),
                         ElevatedButton(
                           onPressed: () => {
                             setState(() {
                               _hasCincoPressed = !_hasCincoPressed;
+                              _hasUnoPressed = false;
+                              _hasDosPressed = false;
+                              _hasCuatroPressed = false;
+                              _hasTresPressed = false;
                             })
                           },
                           child: const Text(
@@ -171,9 +191,9 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
                           ),
                           style: ElevatedButton.styleFrom(
                               elevation: 5,
-                               primary: _hasCincoPressed
-                              ? Color.fromARGB(255, 241, 207, 56)
-                              : Color.fromARGB(255, 251, 251, 240),
+                              primary: _hasCincoPressed
+                                  ? Color.fromARGB(255, 241, 207, 56)
+                                  : Color.fromARGB(255, 251, 251, 240),
                               padding: EdgeInsets.all(8)),
                         )
                       ],
@@ -358,12 +378,13 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
           ),
           OutlinedButton.icon(
             style: OutlinedButton.styleFrom(
-                padding: EdgeInsets.only(right: 50, left: 50, top: 7, bottom: 7),
+                padding:
+                    EdgeInsets.only(right: 50, left: 50, top: 7, bottom: 7),
                 backgroundColor: Colors.white,
                 elevation: 2),
             onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => FiltrosHabitacionScreen()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => FiltrosHabitacionScreen()));
             },
             icon: Icon(
               Icons.house_siding,
@@ -373,7 +394,9 @@ class _HabitacionScreenState extends State<HabitacionScreen> {
             label: Text(
               'Aplicar filtros',
               style: TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
             ),
           )
         ]),
