@@ -624,26 +624,19 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
           SizedBox(
             height: 10,
           ),
-          OutlinedButton.icon(
-            style: OutlinedButton.styleFrom(
-                padding: EdgeInsets.only(right: 50, left: 50, top: 7, bottom: 7),
-                backgroundColor: Colors.white,
-                elevation: 2),
-            onPressed: () {
-              Navigator.of(context).push(
+            MaterialButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              disabledColor: Colors.grey,
+              elevation: 0,
+              color: Color.fromARGB(255, 241, 207, 56),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                child: Text('Aplicar filtros'),
+              ),
+              onPressed:(){
+                  Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => FiltrosScreen()));
-            },
-            icon: Icon(
-              Icons.house_siding,
-              color: Colors.amber[700],
-              size: 25,
-            ),
-            label: Text(
-              'Aplicar filtros',
-              style: TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
-            ),
-          )
+              } )
         ]),
       ),
     );

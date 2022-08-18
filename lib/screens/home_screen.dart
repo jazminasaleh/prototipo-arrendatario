@@ -35,9 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //**AppBar
       appBar: AppBar(
         actions: [
-          Icon(
-            Icons.arrow_back,
-          ),
+         
           SizedBox(
             width: 75,
           ),
@@ -388,33 +386,24 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 20,
           ),
           //**Boton buscar
-          OutlinedButton.icon(
-            style: OutlinedButton.styleFrom(
-                padding:
-                    EdgeInsets.only(right: 50, left: 50, top: 7, bottom: 7),
-                backgroundColor: Colors.white,
-                elevation: 2),
-            onPressed: () {
-              Navigator.of(context).push(
+         
+           MaterialButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              disabledColor: Colors.grey,
+              elevation: 0,
+              color: Color.fromARGB(255, 241, 207, 56),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                child: Text('Buscar'),
+              ),
+              onPressed:(){
+                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => 
                 _hasApartamentoPressed == true
                   ? ApartamentoScreen()
                   : HabitacionScreen()
                 ));
-            },
-            icon: Icon(
-              Icons.search_sharp,
-              color: Colors.amber[700],
-              size: 25,
-            ),
-            label: Text(
-              'Buscar',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15),
-            ),
-          )
+              } )
         ],
       ),
     );
