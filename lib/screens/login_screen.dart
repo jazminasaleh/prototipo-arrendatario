@@ -37,6 +37,8 @@ class _loginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Form(
+        //a penas el usuario toque para escribir salga la linea roja
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Column(
           children: [
             TextFormField(
@@ -46,7 +48,16 @@ class _loginForm extends StatelessWidget {
                 labelText: 'Correo electronico',
                 hintText: 'jazmin.saleh@gmail.com',
                 prefix: Icons.alternate_email_sharp
-              )
+              ),
+              validator: (value){
+                 String pattern =
+                      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                  RegExp regExp = new RegExp(pattern);
+                  return regExp.hasMatch(value ?? '')
+                      ? null
+                      : 'El valor ingresado no luce como un correo';
+              },
+              
             ),
             SizedBox(height: 30,),
             TextFormField(
@@ -56,14 +67,19 @@ class _loginForm extends StatelessWidget {
                  labelText: 'Contraseña',
                 hintText: '****',
                 prefix: Icons.lock_clock_outlined
-              )
+              ),
+              
+                validator: (value) {
+                  if (value != null && value.length >= 6) return null;
+                  return 'La contraseña debe de ser 6 carcateres';
+                },
             ),
             SizedBox(height: 30,),
             MaterialButton(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               disabledColor: Colors.grey,
               elevation: 0,
-              color: Color.fromARGB(255, 241, 207, 56),
+              color: Colors.amber,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                 child: Text('Ingresar'),

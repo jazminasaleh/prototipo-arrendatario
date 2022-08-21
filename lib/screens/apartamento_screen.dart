@@ -628,7 +628,7 @@ class _ApartmentoScreenState extends State<ApartamentoScreen> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               disabledColor: Colors.grey,
               elevation: 0,
-              color: Color.fromARGB(255, 241, 207, 56),
+              color: Colors.amber,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                 child: Text('Aplicar filtros'),

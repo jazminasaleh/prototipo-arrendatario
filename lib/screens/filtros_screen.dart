@@ -60,7 +60,7 @@ class _FiltrosScreenState extends State<FiltrosScreen> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    'Reusltados de la busqueda',
+                    'Resultados de la búsqueda',
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,

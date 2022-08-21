@@ -63,7 +63,7 @@ class _FiltrosHabitacionScreenState extends State<FiltrosHabitacionScreen> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    'Reusltados de la busqueda',
+                    'Resultados de la búsqueda',
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,

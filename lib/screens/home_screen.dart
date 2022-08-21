@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               .map((value) => DropdownMenuItem(
                                     child: Text(
                                       value,
-                                      style: TextStyle(color: Colors.amber[700]),
+                                      style: TextStyle(color: Colors.amber),
                                     ),
                                     value: value,
                                   ))
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         min: 50,
                         max: 900,
                         divisions: 20,
-                        activeColor: Colors.amber[300],
+                        activeColor: Colors.amber,
                         inactiveColor: Colors.amber.shade100,
                         labels: RangeLabels(
                           sliderValue.start.round().toString(),
@@ -208,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             min: 0.5,
                             max: 100,
                             divisions: 10,
-                            activeColor: Colors.amber[300],
+                            activeColor: Colors.amber,
                             inactiveColor: Colors.amber.shade100,
                             onChanged: (double valurIn) {
                               setState(() {
@@ -263,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Icons.apartment_outlined,
                             color: _hasIApartamentoPressed
                             ? Color.fromARGB(255, 255, 255, 255)
-                            : Colors.amber[500],
+                            : Colors.amber,
                             size: 45,
                           ),
                           label: Text(
@@ -277,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             elevation: 3,
                             padding: const EdgeInsets.all(10),
                              primary:_hasApartamentoPressed
-                            ? Color.fromARGB(255, 241, 207, 56)
+                            ? Colors.amber
                             : Color.fromARGB(255, 255, 255, 255),
                           ),
                         ),
@@ -312,7 +312,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icons.bed,
                         color: _hasIHabitacionPressed
                             ? Color.fromARGB(255, 255, 255, 255)
-                            : Colors.amber[500],
+                            : Colors.amber,
                         size: 45,
                       ),
                       label: Text(
@@ -326,7 +326,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         elevation: 3,
                         padding: const EdgeInsets.all(10),
                          primary:_hasHabitacionPressed
-                            ? Color.fromARGB(255, 241, 207, 56)
+                            ? Colors.amber
                             : Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
@@ -359,7 +359,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icons.house_siding_sharp,
                         color: _hasIApartaEstudioPressed
                             ? Color.fromARGB(255, 255, 255, 255)
-                            : Colors.amber[500],
+                            : Colors.amber,
                         size: 45,
                       ),
                       label: Text(
@@ -373,7 +373,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         elevation: 3,
                         padding: const EdgeInsets.all(10),
                         primary: _hasApartaEstudioPressed
-                            ? Color.fromARGB(255, 241, 207, 56)
+                            ? Colors.amber
                             : Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
@@ -391,7 +391,7 @@ class _HomeScreenState extends State<HomeScreen> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               disabledColor: Colors.grey,
               elevation: 0,
-              color: Color.fromARGB(255, 241, 207, 56),
+              color: Colors.amber,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                 child: Text('Buscar'),
