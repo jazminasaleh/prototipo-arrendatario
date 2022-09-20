@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:prototipo_arrendatario/screens/home_screen.dart';
-import 'package:prototipo_arrendatario/screens/register_screen.dart';
 import 'package:prototipo_arrendatario/ui/input_decorations.dart';
 import 'package:prototipo_arrendatario/widgets/widgets.dart';
 
-class LoginScreen extends StatelessWidget { 
+class RegisterScreen extends StatelessWidget { 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,14 +22,15 @@ class LoginScreen extends StatelessWidget {
                 ],)
               ),
               SizedBox(height: 50,),
-              TextButton(
-              onPressed: ()=> Navigator.pushReplacementNamed(context, 'register'),
+             TextButton(
+              onPressed: ()=> Navigator.pushReplacementNamed(context, 'login'),
               style: ButtonStyle(
                 overlayColor: MaterialStateProperty.all(Colors.amber.withOpacity(0.1)),
                 shape: MaterialStateProperty.all(StadiumBorder())
               ),
-               child: Text('Crear una nueva cuenta', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),),),
+               child: Text('Ingregsar con tu cuenta', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),),),
               SizedBox(height: 50,)
+              
 
             ],
           ),)

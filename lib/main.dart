@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototipo_arrendatario/screens/register_screen.dart';
 import 'package:prototipo_arrendatario/screens/screens.dart';
 import 'package:prototipo_arrendatario/theme/app_theme.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       'habitacion' : (_) => HabitacionScreen(),
       'filtros' :(_) => FiltrosScreen(),
       'apartamento' :(_) => ApartamentoScreen(),
-      'login': (_) => LoginScreen()
+      'login': (_) => LoginScreen(),
+      'register':(_) => RegisterScreen()
      },
      theme: AppThem.lightTheme,
     );
