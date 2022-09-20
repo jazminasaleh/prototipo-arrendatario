@@ -3,6 +3,10 @@ import 'package:prototipo_arrendatario/screens/home_screen.dart';
 import 'package:prototipo_arrendatario/screens/register_screen.dart';
 import 'package:prototipo_arrendatario/ui/input_decorations.dart';
 import 'package:prototipo_arrendatario/widgets/widgets.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/login_from_provder.dart';
+import '../services/services.dart';
 
 class LoginScreen extends StatelessWidget { 
   @override
@@ -14,13 +18,19 @@ class LoginScreen extends StatelessWidget {
             children: [
               SizedBox(height: 250,),
               CradContainer(
-                child: Column(children: [
-                  SizedBox(height: 10,),
-                  Text('Login', style: Theme.of(context).textTheme.headline4,),
-                  SizedBox(height: 30,),
-                  _loginForm()
-
-                ],)
+                child: SingleChildScrollView(
+                  child: Column(children: [
+                    SizedBox(height: 10,),
+                    Text('Login', style: Theme.of(context).textTheme.headline4,),
+                    SizedBox(height: 30,),
+                    ChangeNotifierProvider(
+              create: (_) => LoginFormprovider(),
+              //lo que esta dentro de loginfrom es al que se le va a aplicar el provider
+              child: _loginForm(),
+            )
+                
+                  ],),
+                )
               ),
               SizedBox(height: 50,),
               TextButton(
@@ -42,6 +52,7 @@ class LoginScreen extends StatelessWidget {
 class _loginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final loginForm = Provider.of<LoginFormprovider>(context);
     return Container(
       child: Form(
         //a penas el usuario toque para escribir salga la linea roja
@@ -93,10 +104,28 @@ class _loginForm extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                 child: Text('Ingresar'),
               ),
-              onPressed:(){
-                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => HomeScreen()));
-              })
+             onPressed: loginForm.isLoading
+                      ? null
+                      : () async {
+                          //quitar el teclado
+                          FocusScope.of(context).unfocus();
+
+                          //provider authservice
+                          final authService =
+                              Provider.of<AuthService>(context, listen: false);
+
+                          if (!loginForm.isValidForm()) return;
+                          loginForm.isLoading = true;
+                          final String? errorMessege = await authService
+                              .login(loginForm.email, loginForm.password);
+                          //si el error es null pasa a la sieguinete pantalla
+                          if (errorMessege == null) {
+                            Navigator.pushReplacementNamed(context, 'home');
+                          } else {
+                             NotificacionesService.showSanckbar('CORREO YA ESTA RESGITRADO',  backgroundColor: Colors.amber,  duration: const Duration(milliseconds: 1500),);
+                            loginForm.isLoading = false;
+                          }
+                        })
           ],
         ),
       ),
