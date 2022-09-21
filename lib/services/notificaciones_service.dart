@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //notificar si una contraseña o correo esta mal
-// o si ya existe
+// o si ya existe el correo
 class NotificacionesService {
   static GlobalKey<ScaffoldMessengerState> messengerKey =
       new GlobalKey<ScaffoldMessengerState>();

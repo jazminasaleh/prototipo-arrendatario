@@ -128,8 +128,8 @@ class _loginForm extends StatelessWidget {
                             Navigator.pushReplacementNamed(context, 'home');
                           } else {
                              NotificacionesService.showSanckbar('CORREO YA ESTA RESGITRADO',  backgroundColor: Colors.amber,  duration: const Duration(milliseconds: 1500),);
-                            loginForm.isLoading = false;
                           }
+                          loginForm.isLoading = false;
                         })
           ],
         ),

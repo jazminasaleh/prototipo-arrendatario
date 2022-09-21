@@ -35,6 +35,8 @@ class MyApp extends StatelessWidget {
         'login': (_) => LoginScreen(),
         'register': (_) => RegisterScreen()
       },
+      //* para las notificaciones
+      scaffoldMessengerKey: NotificacionesService.messengerKey,
       theme: AppThem.lightTheme,
     );
   }
