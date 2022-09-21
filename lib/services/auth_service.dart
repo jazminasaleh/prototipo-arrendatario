@@ -8,7 +8,7 @@ class AuthService extends ChangeNotifier {
   final String _baseUrl = 'identitytoolkit.googleapis.com';
   //* el api key
   final String _firbaseToken = 'AIzaSyCXrZ7zEvXGvBwyJHc-Xa2ADAeGjO0CDeM';
-
+  //*Para almacenar la infromacion
   final storage = new FlutterSecureStorage();
 
 //Crerar un nuevo usuario y se verifica que el correo no exista
@@ -49,8 +49,6 @@ class AuthService extends ChangeNotifier {
         _baseUrl, '/v1/accounts:signInWithPassword', {'key': _firbaseToken});
     final resp = await http.post(url, body: json.encode(authData));
     final Map<String, dynamic> decodeResp = json.decode(resp.body);
-    print('error en el login');
-    print(decodeResp);
     if (decodeResp.containsKey('idToken')) {
       //grabar la informacion
       await storage.write(key: 'token', value: decodeResp['idToken']);

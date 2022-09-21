@@ -55,6 +55,7 @@ class _loginForm extends StatelessWidget {
     final loginForm = Provider.of<LoginFormprovider>(context);
     return Container(
       child: Form(
+        key: loginForm.formKey,
         //a penas el usuario toque para escribir salga la linea roja
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Column(
@@ -67,6 +68,7 @@ class _loginForm extends StatelessWidget {
                 hintText: 'jazmin.saleh@gmail.com',
                 prefix: Icons.alternate_email_sharp
               ),
+               onChanged: (value) => loginForm.email = value,
               validator: (value){
                  String pattern =
                       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
@@ -88,7 +90,7 @@ class _loginForm extends StatelessWidget {
                 hintText: '****',
                 prefix: Icons.lock_clock_outlined
               ),
-              
+              onChanged: (value) => loginForm.password = value,
                 validator: (value) {
                   if (value != null && value.length >= 6) return null;
                   return 'La contraseña debe de ser 6 carcateres';
@@ -102,7 +104,10 @@ class _loginForm extends StatelessWidget {
               color: Colors.amber,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-                child: Text('Ingresar'),
+                child: Text(
+                        loginForm.isLoading ? 'Espere' : 'Ingresar',
+                        style: TextStyle(color: Colors.white),
+                )
               ),
              onPressed: loginForm.isLoading
                       ? null
@@ -116,14 +121,23 @@ class _loginForm extends StatelessWidget {
 
                           if (!loginForm.isValidForm()) return;
                           loginForm.isLoading = true;
-                          final String? errorMessege = await authService
-                              .login(loginForm.email, loginForm.password);
+                          final String? errorMessege = await authService.login(
+                            loginForm.email, loginForm.password);
                           //si el error es null pasa a la sieguinete pantalla
                           if (errorMessege == null) {
                             Navigator.pushReplacementNamed(context, 'home');
                           } else {
-                             NotificacionesService.showSanckbar('CORREO YA ESTA RESGITRADO',  backgroundColor: Colors.amber,  duration: const Duration(milliseconds: 1500),);
+                             if(errorMessege == 'INVALID_PASSWORD') {
+                              //caja de alerta
+                              NotificacionesService.showSanckbar('CONTRASEÑA INCORRECTA',  backgroundColor: Colors.amber,  duration: const Duration(milliseconds: 1500),);
+                              
+                            } else {
+                              //caja  de alerta
+                               NotificacionesService.showSanckbar('CORREO INCORRECTO',  backgroundColor: Colors.amber,  duration: Duration(seconds: 5),
+                               );
+                            }
                             loginForm.isLoading = false;
+                           
                           }
                         })
           ],
