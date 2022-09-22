@@ -35,7 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
       //**AppBar
       appBar: AppBar(
         actions: [
-         
+          IconButton(onPressed: (){
+            Navigator.pushReplacementNamed(context, 'rol');
+          }, icon: Icon(Icons.arrow_back_rounded)),
           SizedBox(
             width: 75,
           ),
@@ -53,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
-                    width: 80,
+                    width: 60,
                   ),
                   Icon(
                     Icons.person,

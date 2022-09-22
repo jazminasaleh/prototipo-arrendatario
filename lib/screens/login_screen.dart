@@ -125,7 +125,7 @@ class _loginForm extends StatelessWidget {
                             loginForm.email, loginForm.password);
                           //si el error es null pasa a la sieguinete pantalla
                           if (errorMessege == null) {
-                            Navigator.pushReplacementNamed(context, 'home');
+                            Navigator.pushReplacementNamed(context, 'rol');
                           } else {
                 
                              if(errorMessege == 'INVALID_PASSWORD') {

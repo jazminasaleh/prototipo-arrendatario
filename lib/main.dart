@@ -33,7 +33,9 @@ class MyApp extends StatelessWidget {
         'filtros': (_) => FiltrosScreen(),
         'apartamento': (_) => ApartamentoScreen(),
         'login': (_) => LoginScreen(),
-        'register': (_) => RegisterScreen()
+        'register': (_) => RegisterScreen(),
+        'rol': (_) => RolSreen(),
+        
       },
       //* para las notificaciones
       scaffoldMessengerKey: NotificacionesService.messengerKey,

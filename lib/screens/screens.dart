@@ -1,3 +1,5 @@
+export 'package:prototipo_arrendatario/screens/rol_screen.dart';
+
 export 'package:prototipo_arrendatario/screens/register_screen.dart';
 
 export 'package:prototipo_arrendatario/screens/login_screen.dart';

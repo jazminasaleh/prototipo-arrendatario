@@ -125,7 +125,7 @@ class _loginForm extends StatelessWidget {
                               .createUser(loginForm.email, loginForm.password);
                           //si el error es null pasa a la sieguinete pantalla
                           if (errorMessege == null) {
-                            Navigator.pushReplacementNamed(context, 'home');
+                            Navigator.pushReplacementNamed(context, 'login');
                           } else {
                              NotificacionesService.showSanckbar('CORREO YA ESTA RESGITRADO',  backgroundColor: Colors.amber,  duration: const Duration(milliseconds: 1500),);
                           }
