@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:prototipo_arrendatario/widgets/widgets.dart';
 
 class RolSreen extends StatelessWidget {
   const RolSreen({super.key});
@@ -8,13 +9,14 @@ class RolSreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+       
         actions: [
-          IconButton(onPressed: (){
-            Navigator.pushReplacementNamed(context, 'login');
-          }, icon: Icon(Icons.arrow_back_rounded)),
-          SizedBox(
-            width: 75,
-          ),
+          /*IconButton(
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, 'login');
+              },
+              icon: Icon(Icons.arrow_back_rounded)),*/
+        
           Container(
             child: Padding(
               padding: EdgeInsets.only(right: 20, bottom: 13),
@@ -29,24 +31,24 @@ class RolSreen extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
-                    width: 80,
+                    width: 90,
                   ),
-                  Icon(
-                    Icons.person,
-                  )
+                 
                 ],
               ),
             ),
           ),
-        ],),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-                //* Arrebdador
-               Container(
-                margin: EdgeInsets.only(top: 100),
+        ],
+         //leading: Icon(Icons.person),
+      ),
+      drawer: SideMenu(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          //* Arrebdador
+          Container(
+            margin: EdgeInsets.only(top: 100),
             child: Row(
-              
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
@@ -54,12 +56,10 @@ class RolSreen extends StatelessWidget {
                   width: 390,
                   child: Expanded(
                     child: ElevatedButton.icon(
-                      onPressed: () {
-                       
-                      },
+                      onPressed: () {},
                       icon: Icon(
                         Icons.other_houses_outlined,
-                        color: Colors.black,
+                        color: Colors.amber,
                         size: 45,
                       ),
                       label: Text(
@@ -70,10 +70,9 @@ class RolSreen extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       style: ElevatedButton.styleFrom(
-                        elevation: 3,
-                        padding: const EdgeInsets.all(10),
-                       backgroundColor:Colors.amber
-                      ),
+                          elevation: 3,
+                          padding: const EdgeInsets.all(10),
+                          backgroundColor: Colors.white),
                     ),
                   ),
                 )
@@ -93,12 +92,11 @@ class RolSreen extends StatelessWidget {
                   width: 390,
                   child: Expanded(
                     child: ElevatedButton.icon(
-                      onPressed: () => {
-                       Navigator.pushReplacementNamed(context, 'home')
-                      },
+                      onPressed: () =>
+                          {Navigator.pushReplacementNamed(context, 'home')},
                       icon: Icon(
                         Icons.bed,
-                        color: Colors.black,
+                        color: Colors.amber,
                         size: 45,
                       ),
                       label: Text(
@@ -109,20 +107,24 @@ class RolSreen extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       style: ElevatedButton.styleFrom(
-                        elevation: 3,
-                        padding: const EdgeInsets.all(10),
-                        backgroundColor: Colors.amber
-                      ),
+                          elevation: 3,
+                          padding: const EdgeInsets.all(10),
+                          backgroundColor: Colors.white),
                     ),
                   ),
                 )
               ],
             ),
           ),
-          SizedBox(height: 100,),
-          SvgPicture.asset('assets/home.svg', height: 300,)
-          ],
-        ),
+          SizedBox(
+            height: 100,
+          ),
+          SvgPicture.asset(
+            'assets/home.svg',
+            height: 300,
+          )
+        ],
+      ),
     );
   }
 }
